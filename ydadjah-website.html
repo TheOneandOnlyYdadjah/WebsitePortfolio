@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter as the default font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple animation for sections */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header Section -->
+        <header class="text-center py-16 sm:py-24">
+            <div class="fade-in-up">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-cyan-400">
+                    Your Name
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
+                    Programmer | YouTuber | High School Student
+                </p>
+            </div>
+        </header>
+
+        <!-- About Me Section -->
+        <main>
+            <section id="about" class="py-16 sm:py-20 border-t border-gray-800">
+                <div class="max-w-3xl mx-auto text-center fade-in-up" style="transition-delay: 150ms;">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">About Me</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Hello! I'm Mabaling Ydadjah a passionate high school student with a deep interest in Programming, Science, and Mathematics. When I'm not studying, I'm either building cool projects with code or creating animation content for my YouTube channel. I love exploring knowledge and studying
+                    </p>
+                </div>
+            </section>
+
+            <!-- My Work Section -->
+            <section id="work" class="py-16 sm:py-20 border-t border-gray-800">
+                <div class="max-w-4xl mx-auto text-center fade-in-up" style="transition-delay: 300ms;">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-10">My Websites</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Website Link 1 -->
+                        <a href="https://web.facebook.com/ydadjahh" target="_blank" rel="noopener noreferrer" class="block p-8 bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-2">Official FaceBook</h3>
+                            <p class="text-gray-400">Mabaling Ydadjah</p>
+                        </a>
+                        <!-- Website Link 2 -->
+                        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2F%40azteroneditz%3Fsi%3DqFJBchM6egCZU-fs%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExdkdpMU1aSWlmZTA5Q2NWNwEebcYPVb7U46d5notCe5Y7pdTI0eaFNAq5WQWjn_MWDVt6kJosnQDgNSo0Fro_aem_a3oSDW7gvWSVFoS78DOlkg&h=AT3IlxEz-XXgup_8fxHl_EUE_um6aC_GdP5Q12BSFzdMLCvAiaRgIGt23v8_WptACfL1VgAfKJAXZ1P-6BwBsxobnZHqcrid4XI8apeY_KLH6cqgc_0kPiroAp-5" target="_blank" rel="noopener noreferrer" class="block p-8 bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-2">YouTube Channel Hub</h3>
+                            <p class="text-gray-400">YouTube Official</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-10 mt-16 border-t border-gray-800">
+            <p class="text-gray-500">&copy; 2025 Mabaling Ydadjah. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // JavaScript to trigger animations on scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(elem => {
+                observer.observe(elem);
+            });
+        });
+    </script>
+
+</body>
+</html>
